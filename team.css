@@ -1,0 +1,462 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    box-sizing:border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    width: 100%;
+    background: black;
+    text-align: center;
+}
+.links{
+    padding: 30px;
+}
+.links a{
+    padding: 5px 6px;
+    margin: 0 5px;
+    color:white;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: 0.5s all ease;
+}
+.links a:hover{
+    color: #FCD30B;
+}
+.links a::before{
+    content: "";
+    position: absolute;
+    width:0%;
+    height: 1px;
+    background: #FCD30B;
+    top:0;
+    left: 0;
+    transition: 0.5s all ease;
+}
+.links a::after{
+    content: "";
+    position: absolute;
+    width:0%;
+    height: 1.5px;
+    background: #FCD30B;
+    bottom:0;
+    right: 0;
+    transition: 0.5s all ease;
+}
+.links a:hover::before,.links a:hover::after{
+    width:100%;
+}
+.team_con{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.footer{
+    width: 100%;
+    background: black;
+    height: 50px;
+    position: relative;
+    z-index: 10;
+}
+.team{
+    flex:1;
+    width: 100%;
+}
+.side{
+    width: 50px;
+    background: #fcd30b;
+    position: relative;
+}
+.icons_con{
+    position: fixed;
+    top:25%;
+    height: 100%;
+    width:50px;
+    background: #fcd30b;    
+}
+.icon{
+    padding: 5px ;
+    position: relative;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.icon::before{
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 80%;
+    top: -5px;
+    left: 100%;
+    padding: 10px;
+    background: #fcd30b;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    transition: 0.5s all ease;
+    color: white;
+}
+.icon:hover::before{
+    width:260%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: black;
+}
+.core:hover::before{
+    content: "Core Team";
+}
+
+.hardware:hover::before{
+    content: "Hardware Design";
+}
+.software:hover::before{
+    content: "Software Development";
+}
+.embed:hover::before{
+    content: "Embedded System";
+}
+.robot:hover::before{
+    content: "Robotics";
+}
+.mech:hover::before{
+    content: "Mechanical";
+}
+.pr:hover::before{
+    content: "Public  -  Relations";
+}
+.domain{
+    width: 100%;
+    min-height:100vh;
+}
+.icon svg{
+    width:30px;
+    height:30px;
+}
+
+.domain_con{
+    width: 90%;
+    margin: 10px auto;
+    height: 100%;
+    text-align: center;
+}
+.d_head{
+    display: inline;
+    padding: 5px;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-right: 0px;
+    position: relative;
+}
+.d_head::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: text-reveal 1s ease forwards 0.5s;
+}
+
+@keyframes text-reveal{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+.d_head::after{
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width:7px;
+    height:7px;
+    background: #FCD30B;
+    z-index: 10000;
+    animation: cursor 2s ease forwards;
+}
+@keyframes cursor{
+    0%{
+        height: 7px;
+    }
+    25%{
+        height: 23px;
+        left: 0;
+    }
+    66%{
+        height: 23px;
+        left: 101%;
+    }
+    100%{
+        height: 7px;
+        left: 101%;
+    }
+}
+.team_mem_con,.core_mem_con{
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    margin: 20px 0;
+    padding: 20px;
+}
+.mem_con{
+    display: grid;
+    width: 90%;
+    margin: 0px auto;
+    height: 100%;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.member{
+    flex: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 3px;
+}
+.member_img{
+    width: 140px;
+    height: 140px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.link{
+    padding: 5px;
+}
+li{
+    list-style: none;
+    margin: 4px 2px;
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: white;
+}
+.social_links a{
+    color: white;
+}
+.member_img img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 0.3s filter ease;
+    border:3px white solid;
+    pointer-events: none;
+}
+.member_info p:nth-child(1){
+    font-weight: bolder;
+    font-family: 'Maven Pro', sans-serif;
+}
+.member_info p:nth-child(2){
+    font-size: 13px;
+}
+
+.mem_hardware,.mem_software{
+    grid-template-columns: repeat(4,auto);
+}
+.mem_hardware2,.mem_embed{
+    grid-template-columns: repeat(3,auto);
+}
+.mem_software2,.mem_robo,.mem_mech,.mem_pr{
+    grid-template-columns: repeat(2,auto);
+}
+
+.core_img img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.core_mem{
+    background: white;
+    padding:10px 30px;
+    padding-bottom: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    margin: 20px 0;
+}
+.core_con{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: space-evenly;
+}
+.core_con2{
+    grid-template-columns: repeat(2,auto);
+}
+.core_info{
+    margin: 10px 0;
+}
+.core_info p:nth-child(1){
+    font-family: 'Maven Pro', sans-serif;
+}
+.core_info p:nth-child(2){
+    font-size: 15px;
+    color:#aaa;
+}
+.core_social{
+    width: 100%;
+    padding: 0 30px;
+    margin-top: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+li{
+    background: white;
+}
+.core_team_con{
+    background: #ddd;
+    min-height: 100vh;
+    margin-top: 30px;
+}
+.hamburger_con{
+    text-align: right;
+    padding: 20px;
+    display: none;
+}
+.hamburger_con svg{
+    cursor: pointer;
+}
+
+.nav_links_con_reponsive{
+    text-align: center;
+    background: black;
+    z-index: 100;
+    position: relative;  
+}
+.nav_links_con_reponsive a{
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+@media only screen and (max-width: 900px){
+    .mem_hardware,.mem_hardware2,.mem_embed,.mem_software,.core_con{
+        grid-template-columns: repeat(2,auto);
+    }
+    .domain_con{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .embed_domain .d_head , .software_domain .d_head{
+        font-size: 20px;
+    }
+    .hamburger_con{
+        display: block;
+    }
+    .header{
+        height: 70px;
+    }
+    .links{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    .core_con{
+        grid-template-columns: repeat(1,auto);
+    }
+    .icon::before{
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+    }
+    .icon:hover::before{
+        content: '';
+    }
+}
+
+@media only screen and (max-width: 520px){
+    .mem_hardware,.mem_pr,.mem_hardware2,.mem_embed,.mem_software,.mem_software2,.mem_robo,.mem_mech{
+        grid-template-columns: repeat(1,auto);
+    }
+    .mem_con{
+        margin-left: 0;
+    }
+    .d_head{
+        font-size: 15px;
+    }
+    .embed_domain .d_head , .software_domain .d_head{
+        font-size: 15px;
+    }
+    .d_head::after{
+        bottom: 7px;
+        width:5px;
+        height:5px;
+    }
+    @keyframes cursor{
+        0%{
+            height: 5px;
+        }
+        25%{
+            height: 15px;
+            left: 0;
+        }
+        66%{
+            height: 15px;
+            left: 101%;
+        }
+        100%{
+            height: 5px;
+            left: 101%;
+        }
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .embed_domain .d_head , .software_domain .d_head{
+        font-size: 11px;
+    }
+    .side,.icons_con{
+        width: 40px;
+    }
+    .core_mem{
+        padding:10px;
+    }
+    .core_social{
+        padding:0 10px;
+        position: relative;
+        top:10px;
+    }
+    .core_img img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-height: 570px){
+    .icons_con{
+        top: 20%;
+    }
+    .icon{
+        padding: 5px;
+    }
+}
