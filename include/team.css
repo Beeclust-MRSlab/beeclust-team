@@ -10,6 +10,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
+
 a{
     text-decoration: none;
 }
@@ -206,133 +207,71 @@ a{
         left: 101%;
     }
 }
-.team_mem_con,.core_mem_con{
+.team_mem_con,.core_team_con{
     width: 100%;
     height: 100%;
-    background: #ddd;
     margin: 20px 0;
     padding: 20px;
 }
-.mem_con{
+.mem_con,.core_con,.core_con2,.mem_con1,.mem_con2{
     display: grid;
-    width: 90%;
-    margin: 0px auto;
+    width: 100%;
     height: 100%;
     justify-content: space-around;
     text-align: center;
 }
+.core_mem{
+    margin: 30px 0;
+    width: 100%;
+    position: relative;
+    border-radius:30px;
+    height: 398px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.7);
+}
+.info_core_mem{
+    width:100%;
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.9));
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    border-radius:30px;
+}
 
-.member{
-    flex: 1;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 30px 3px;
+.core_name{
+    margin-top: 5px;
+    font-size: 20px;
+    color: #e4cd37;
+    font-weight: bolder;
 }
-.member_img{
-    width: 140px;
-    height: 140px;
-    background: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+.core_con,.mem_con{
+    grid-template-columns: repeat(3,auto);
 }
-.link{
-    padding: 5px;
+.core_con2,.mem_con2{
+    grid-template-columns: repeat(2,auto);
 }
-li{
+.core_img img{
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+}
+.social_link a{
+    font-size: 22px;
+}
+.social_link li{
     list-style: none;
     margin: 4px 2px;
     display: inline-block;
-    padding: 8px 10px;
+    padding: 8px 15px;
     border-radius: 50%;
-    font-size: 15px;
-    color: white;
 }
-.social_links a{
-    color: white;
+.fa-linkedin{
+    color: #0e76a8;
 }
-.member_img img{
-    width:100px;
-    height: 100px;
-    border-radius: 50%;
-    transition: 0.3s filter ease;
-    border:3px white solid;
-    pointer-events: none;
+.fa-facebook{
+    color: #3b5998;
 }
-.member_info p:nth-child(1){
-    font-weight: bolder;
-    font-family: 'Maven Pro', sans-serif;
-}
-.member_info p:nth-child(2){
-    font-size: 13px;
-}
-
-.mem_hardware,.mem_software{
-    grid-template-columns: repeat(4,auto);
-}
-.mem_hardware2,.mem_embed{
-    grid-template-columns: repeat(3,auto);
-}
-.mem_software2,.mem_robo,.mem_mech,.mem_pr{
-    grid-template-columns: repeat(2,auto);
-}
-
-.core_img img{
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    pointer-events: none;
-}
-.core_mem{
-    background: white;
-    padding:10px 30px;
-    padding-bottom: 0;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
-    margin: 20px 0;
-}
-.core_con{
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    justify-content: space-evenly;
-}
-.core_con2{
-    grid-template-columns: repeat(2,auto);
-}
-.core_info{
-    margin: 10px 0;
-}
-.core_info p:nth-child(1){
-    font-family: 'Maven Pro', sans-serif;
-}
-.core_info p:nth-child(2){
-    font-size: 15px;
-    color:#aaa;
-}
-.core_social{
-    width: 100%;
-    padding: 0 30px;
-    margin-top: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-li{
-    background: white;
-}
-.core_team_con{
-    background: #ddd;
-    min-height: 100vh;
-    margin-top: 30px;
+.fa-instagram{
+    color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 .hamburger_con{
     text-align: right;
@@ -355,8 +294,19 @@ li{
     color: white;
 }
 
+@media only screen and (max-width: 1200px){
+    .mem_con,.core_con{
+        grid-template-columns: repeat(2,auto);
+    }
+}
+@media only screen and (max-width: 840px){
+    .mem_con,.core_con,.mem_con2,.core_con2{
+        grid-template-columns: repeat(1,auto);
+    }
+}
+
 @media only screen and (max-width: 900px){
-    .mem_hardware,.mem_hardware2,.mem_embed,.mem_software,.core_con{
+    .mem_hardware,.mem_hardware2,.mem_embed,.mem_software,{
         grid-template-columns: repeat(2,auto);
     }
     .domain_con{
@@ -380,9 +330,6 @@ li{
 }
 
 @media only screen and (max-width: 660px){
-    .core_con{
-        grid-template-columns: repeat(1,auto);
-    }
     .icon::before{
         width: 0;
         height: 0;
@@ -391,6 +338,12 @@ li{
     }
     .icon:hover::before{
         content: '';
+    }
+    .coew_team_con{
+        margin-right: 40px;
+    }
+    .team_mem_con,.core_team_con{
+        padding: 0px;
     }
 }
 
@@ -431,24 +384,22 @@ li{
     }
 }
 
+@media only screen and (max-width: 450px){
+    .core_img img{
+        width: 250px;
+        height: 350px;
+    }
+    .core_mem{
+        height: 348px;
+    }
+}
+
 @media only screen and (max-width: 420px){
     .embed_domain .d_head , .software_domain .d_head{
         font-size: 11px;
     }
     .side,.icons_con{
         width: 40px;
-    }
-    .core_mem{
-        padding:10px;
-    }
-    .core_social{
-        padding:0 10px;
-        position: relative;
-        top:10px;
-    }
-    .core_img img{
-        width: 100px;
-        height: 100px;
     }
 }
 
@@ -458,5 +409,14 @@ li{
     }
     .icon{
         padding: 5px;
+    }
+}
+@media only screen and (max-width: 355px){
+    .core_img img{
+        width: 200px;
+        height: 300px;
+    }
+    .core_mem{
+        height: 298px;
     }
 }
